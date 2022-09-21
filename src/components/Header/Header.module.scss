@@ -1,0 +1,52 @@
+.header{
+display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 50%;
+  margin-left: 600px  ;
+  .wrapper{
+  display: flex;
+  justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+    .logo{
+      display: flex;
+      cursor: pointer;
+p{
+  padding-top: 15px;
+  margin-left: 10px ;
+}
+    }
+
+    ul{
+      display: flex;
+      gap: 40px ;
+      margin-right: 600px;
+      li{
+        list-style-type: none ;
+        cursor: pointer;
+
+
+      }
+    }
+    button{
+     background-color: #8cc152;
+      border: none  ;
+      width: 70px;
+      height: 30px ;
+      margin-right: 20px;
+      border-radius: 5px;
+      color: white;
+      opacity: 1;
+      cursor: pointer;
+      &:hover{
+          opacity: 0.8;
+        transition: .3s ease-in;
+      }
+    }
+}
+
+
+
+}
