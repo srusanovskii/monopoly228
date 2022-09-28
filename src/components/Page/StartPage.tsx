@@ -1,8 +1,9 @@
 import React from 'react';
 import style from './StartPage.module.scss'
-import axios from "axios";
 import Cart from "../Cart";
 import Footer from "../Footer/Footer";
+import {post} from "../../Cart";
+import {Link} from "react-router-dom";
 
 export interface ICart {
 	id: string,
@@ -13,16 +14,8 @@ export interface ICart {
 
 
 const StartPage: React.FC = () => {
-	const [cart, setCart] = React.useState<ICart[]>()
-	React.useEffect(() => {
-		const fetchData = async () => {
-			const res = await axios.get('https://62c5602fa361f72512824193.mockapi.io/cart')
-			setCart(res.data)
-		}
-		fetchData()
+	const [cart, setCart] = React.useState<ICart[]>(post)
 
-
-	}, [])
 
 
 	return (
@@ -30,7 +23,9 @@ const StartPage: React.FC = () => {
 			<div className={style.header}>
 				<h1>Приглашаем в Монополию.</h1>
 				<p>Это отличное место, чтобы поиграть с друзьями в легендарную настольную игру.</p>
+				<Link to='/main'>
 				<button>Начать игру</button>
+				</Link>
 
 			</div>
 			<img src="//m1.dogecdn.wtf/website/index/screenshot.png" alt="Cart"/>
@@ -45,7 +40,9 @@ const StartPage: React.FC = () => {
 				</div>
 
 			</div>
+			<Link to='/main'>
 			<button>Начать игру</button>
+			</Link>
 			<Footer/>
 		</div>
 	);
